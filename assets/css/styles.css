@@ -1,0 +1,1264 @@
+/* ==========================================================================
+   PORTFOLIO – VY XUÂN HOÀNG
+   Phong cách: hiện đại – sạch – hài hòa
+   Mobile First
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. BIẾN MÀU SẮC
+   ========================================================================== */
+
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-dark: #3730a3;
+  --color-accent: #8b5cf6;
+
+  --color-text: #172033;
+  --color-text-soft: #64748b;
+
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-blue: #eef2ff;
+
+  --color-border: #e2e8f0;
+
+  --font-base:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-h2: 1.6rem;
+  --fs-h1: 2.2rem;
+
+  --lh-base: 1.6;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+
+  --container-max: 1150px;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  --shadow:
+    0 4px 15px rgba(15, 23, 42, 0.06);
+
+  --shadow-hover:
+    0 15px 35px rgba(79, 70, 229, 0.14);
+}
+
+
+/* ==========================================================================
+   2. RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+
+  color: var(--color-text);
+  background: var(--color-bg);
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   3. CONTAINER
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+
+  margin-inline: auto;
+
+  padding-inline: var(--space-2);
+}
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section-muted {
+  background: var(--color-surface);
+}
+
+.section-title {
+  position: relative;
+
+  font-size: var(--fs-h2);
+
+  margin-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 4px;
+
+  margin-top: 0.5rem;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+}
+
+.section-sub {
+  color: var(--color-text-soft);
+
+  margin-bottom: var(--space-3);
+
+  max-width: 650px;
+}
+
+
+/* ==========================================================================
+   4. HEADER
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.header-inner {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  padding-block: 0.75rem;
+}
+
+
+/* Logo */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.brand-mark {
+  display: grid;
+
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+
+  color: #fff;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 5px 15px rgba(79, 70, 229, 0.25);
+}
+
+.brand-name {
+  font-size: 1rem;
+}
+
+
+/* Navigation */
+
+.nav-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.25rem;
+}
+
+.nav-list a {
+  display: inline-block;
+
+  padding: 0.45rem 0.65rem;
+
+  border-radius: 8px;
+
+  color: var(--color-text-soft);
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color-primary);
+
+  background: var(--color-surface-blue);
+}
+
+
+/* ==========================================================================
+   5. HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+
+  padding-block: 4rem;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(139, 92, 246, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(79, 70, 229, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f8faff 0%,
+      #ffffff 100%
+    );
+}
+
+.hero-inner {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-4);
+
+  align-items: center;
+}
+
+
+/* Nội dung */
+
+.hero-text {
+  width: 100%;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--color-primary);
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  font-size: var(--fs-sm);
+}
+
+.hero-title {
+  font-size: var(--fs-h1);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-size: var(--fs-lg);
+
+  color: var(--color-accent);
+
+  font-weight: 700;
+
+  margin-bottom: var(--space-2);
+}
+
+.hero-desc {
+  color: var(--color-text-soft);
+
+  max-width: 650px;
+
+  margin-bottom: 1rem;
+}
+
+
+/* ==========================================================================
+   6. AVATAR
+   ========================================================================== */
+
+.hero-avatar {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.hero-avatar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 70, 229, 0.12),
+      rgba(139, 92, 246, 0.08)
+    );
+
+  z-index: 0;
+}
+
+.hero-avatar img {
+  position: relative;
+
+  z-index: 1;
+
+  width: 230px;
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 7px solid #fff;
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ==========================================================================
+   7. BUTTON
+   ========================================================================== */
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+
+  padding: 0.75rem 1.3rem;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* Nút chính */
+
+.btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.2);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 12px 25px rgba(79, 70, 229, 0.3);
+}
+
+
+/* Nút phụ */
+
+.btn-outline {
+  border: 1.5px solid var(--color-primary);
+
+  color: var(--color-primary);
+
+  background: #fff;
+}
+
+.btn-outline:hover {
+  background: var(--color-surface-blue);
+}
+
+
+/* ==========================================================================
+   8. KỸ NĂNG
+   ========================================================================== */
+
+.skill-grid {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+}
+
+.skill-chip {
+  background: #fff;
+
+  color: var(--color-primary-dark);
+
+  border: 1px solid #dbe3f0;
+
+  padding: 0.55rem 0.9rem;
+
+  border-radius: 999px;
+
+  font-size: var(--fs-sm);
+
+  font-weight: 600;
+
+  box-shadow:
+    0 2px 5px rgba(15, 23, 42, 0.03);
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px);
+
+  background: var(--color-surface-blue);
+
+  border-color: #c7d2fe;
+}
+
+
+/* ==========================================================================
+   9. PROJECT GRID
+   ========================================================================== */
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+}
+
+
+/* ==========================================================================
+   10. PROJECT CARD
+   ========================================================================== */
+
+.card {
+  position: relative;
+
+  background: #fff;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius);
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  display: flex;
+
+  flex-direction: column;
+
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  border-color: #c7d2fe;
+
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* Ảnh */
+
+.card-media {
+  width: 100%;
+
+  aspect-ratio: 5 / 3;
+
+  object-fit: cover;
+
+  transition: transform 0.3s;
+}
+
+.card:hover .card-media {
+  transform: scale(1.02);
+}
+
+
+/* Nội dung */
+
+.card-body {
+  padding: 1.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.65rem;
+
+  flex: 1;
+}
+
+.card-title {
+  font-size: var(--fs-lg);
+
+  line-height: 1.3;
+}
+
+.card-desc {
+  color: var(--color-text-soft);
+
+  font-size: var(--fs-sm);
+
+  line-height: 1.65;
+
+  flex: 1;
+}
+
+
+/* ==========================================================================
+   11. TAG
+   ========================================================================== */
+
+.tag-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.4rem;
+
+  margin-top: 0.25rem;
+}
+
+.tag-list li {
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  color: var(--color-primary-dark);
+
+  background: var(--color-surface-blue);
+
+  border: 1px solid #dbeafe;
+
+  padding: 0.25rem 0.55rem;
+
+  border-radius: 999px;
+}
+
+
+/* Link */
+
+.card-link {
+  display: inline-block;
+
+  color: var(--color-primary);
+
+  font-weight: 700;
+
+  font-size: var(--fs-sm);
+
+  margin-top: 0.5rem;
+
+  transition: color 0.2s;
+}
+
+.card-link:hover {
+  color: var(--color-primary-dark);
+
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   12. CONTACT
+   ========================================================================== */
+
+#contact {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8faff
+    );
+}
+
+.contact-inner {
+  max-width: 800px;
+}
+
+.contact-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  margin-top: 1.5rem;
+}
+
+.contact-list li {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding: 0.9rem 1rem;
+
+  background: #fff;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.contact-list li:hover {
+  border-color: #c7d2fe;
+
+  transform: translateX(4px);
+}
+
+.contact-label {
+  min-width: 80px;
+
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.contact-list a {
+  color: var(--color-primary);
+
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+
+  background: #f8fafc;
+
+  padding-block: 1.5rem;
+}
+
+.footer-inner {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: var(--color-text-soft);
+
+  font-size: var(--fs-sm);
+}
+
+.to-top {
+  color: var(--color-primary);
+
+  font-weight: 700;
+
+  transition: color 0.2s;
+}
+
+.to-top:hover {
+  color: var(--color-primary-dark);
+
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   14. TABLET
+   ≥ 768px
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+  :root {
+    --fs-h1: 2.8rem;
+    --fs-h2: 1.8rem;
+  }
+
+  .container {
+    padding-inline: 2rem;
+  }
+
+
+  /* Header */
+
+  .header-inner {
+    padding-block: 1rem;
+  }
+
+
+  /* Hero */
+
+  .hero {
+    padding-block: 5rem;
+  }
+
+  .hero-inner {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 4rem;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-avatar {
+    flex: 0 0 300px;
+  }
+
+  .hero-avatar img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-avatar::before {
+    width: 300px;
+    height: 300px;
+  }
+
+
+  /* Projects */
+
+  .project-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  /* Contact */
+
+  .contact-list li {
+    padding: 1rem 1.25rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   15. DESKTOP
+   ≥ 1280px
+   ========================================================================== */
+
+@media (min-width: 1280px) {
+
+  :root {
+    --fs-h1: 3.2rem;
+  }
+
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+
+  /* Hero */
+
+  .hero {
+    padding-block: 6rem;
+  }
+
+  .hero-inner {
+    gap: 6rem;
+  }
+
+  .hero-avatar {
+    flex-basis: 360px;
+  }
+
+  .hero-avatar img {
+    width: 330px;
+    height: 330px;
+  }
+
+  .hero-avatar::before {
+    width: 350px;
+    height: 350px;
+  }
+
+
+  /* Projects 3 cột */
+
+  .project-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* ==========================================================================
+   16. ACCESSIBILITY
+   ========================================================================== */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+
+  outline-offset: 3px;
+
+  border-radius: 5px;
+}
+
+
+/* ==========================================================================
+   17. GIẢM CHUYỂN ĐỘNG
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+  }
+
+}
+/* ============================================================
+   HIỆU ỨNG PORTFOLIO
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Hiệu ứng xuất hiện khi mở trang
+   ------------------------------------------------------------ */
+
+.hero-text {
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-avatar {
+  animation: fadeIn 1s ease 0.2s both;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   2. Avatar chuyển động nhẹ
+   ------------------------------------------------------------ */
+
+.hero-avatar img {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-avatar img:hover {
+  transform: scale(1.04) rotate(1deg);
+
+  box-shadow:
+    0 20px 45px rgba(79, 70, 229, 0.2);
+}
+
+
+/* ------------------------------------------------------------
+   3. Vòng sáng phía sau avatar
+   ------------------------------------------------------------ */
+
+.hero-avatar::before {
+  animation: avatarGlow 4s ease-in-out infinite;
+}
+
+@keyframes avatarGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   4. Hiệu ứng nút
+   ------------------------------------------------------------ */
+
+.btn {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 130%;
+}
+
+
+/* ------------------------------------------------------------
+   5. Hiệu ứng skill
+   ------------------------------------------------------------ */
+
+.skill-chip {
+  cursor: default;
+}
+
+.skill-chip:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 7px 15px rgba(79, 70, 229, 0.1);
+}
+
+
+/* ------------------------------------------------------------
+   6. Hiệu ứng project card
+   ------------------------------------------------------------ */
+
+.card {
+  transform: translateY(0);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Ảnh project */
+
+.card-media {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.card:hover .card-media {
+  transform: scale(1.05);
+
+  filter: brightness(1.03);
+}
+
+
+/* ------------------------------------------------------------
+   7. Hiệu ứng title project
+   ------------------------------------------------------------ */
+
+.card-title {
+  transition: color 0.25s ease;
+}
+
+.card:hover .card-title {
+  color: var(--color-primary);
+}
+
+
+/* ------------------------------------------------------------
+   8. Hiệu ứng link
+   ------------------------------------------------------------ */
+
+.card-link {
+  position: relative;
+
+  width: fit-content;
+}
+
+.card-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -3px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--color-primary);
+
+  transition: width 0.25s ease;
+}
+
+.card-link:hover::after {
+  width: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   9. Hiệu ứng menu
+   ------------------------------------------------------------ */
+
+.nav-list a {
+  position: relative;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-list a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ------------------------------------------------------------
+   10. Hiệu ứng contact
+   ------------------------------------------------------------ */
+
+.contact-list li {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.contact-list li:hover {
+  transform: translateX(6px);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.06);
+
+  border-color: #c7d2fe;
+}
+
+
+/* ------------------------------------------------------------
+   11. Hiệu ứng footer
+   ------------------------------------------------------------ */
+
+.to-top {
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.to-top:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ------------------------------------------------------------
+   12. Khi người dùng không muốn animation
+   ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+}
